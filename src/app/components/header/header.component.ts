@@ -7,11 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() titulo: string;
+  private _titulo: string;
+
+  @Input() set titulo(titulo: string) {
+    this._titulo = (titulo && titulo.trim()) || 'Componente Ionic';
+  }
+
+  get titulo(): string { return this._titulo; }
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

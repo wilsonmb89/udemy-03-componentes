@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>List - Reorder</ion-title>
+    <ion-buttons slot="end">
+      <ion-button type="button" [color]="disableReorder ? 'primary' : 'light'" fill="solid" (click)="toogleReorder()">Toogle</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-reorder-group [disabled]="disableReorder" (ionItemReorder)="reorder($event)">
+      <ion-item *ngFor="let p of personajes; let idx = index">
+        <ion-label>{{ idx + 1 }} - {{ p }}</ion-label>
+        <ion-reorder *ngIf="!disableReorder"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+  <ion-button expand="full" (click)="printPersonajes()">Guardar</ion-button>
+</ion-content>

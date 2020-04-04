@@ -1,4 +1,11 @@
-<app-header [titulo]="'alert'"></app-header>
-<ion-content class="ion-padding">
-  <h1>Este es el alert page</h1>
+<app-header [titulo]="titulo"></app-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="presentAlert()">Simple Alert</ion-button>
+  <ion-button expand="full" (click)="changeTitleAlert()">Change Title Alert</ion-button>
+  <ion-button expand="full" (click)="presentAlertMultipleButtons()">Multiple Buttons Alert</ion-button>
+  <ion-button expand="full" (click)="presentAlertConfirm()">Alert Confirm With Handlers</ion-button>
+  <ion-button expand="full" (click)="presentAlertPrompt()">Inputs Alert</ion-button>
+  <ion-button expand="full" (click)="presentAlertRadio()">Radio Buttons Alert</ion-button>
+  <ion-button expand="full" (click)="presentAlertCheckbox()">Check Boxes Alert</ion-button>
 </ion-content>

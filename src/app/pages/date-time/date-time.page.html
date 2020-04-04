@@ -1,0 +1,62 @@
+<app-header titulo="DateTime"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Fecha de Nacimiento (Interpolado opt.1)</ion-label>
+      <ion-datetime placeholder="Seleccione Fecha"
+                    display-format="DD MMMM YYYY"
+                    cancelText="Cancelar"
+                    [ngModel]="fechaNacimiento.toISOString()"
+                    (ionChange)="printData($event)"
+                    >
+      </ion-datetime>
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime placeholder="dd-mm-yyyy"
+                    display-format="DD MMMM YYYY"
+                    cancelText="Cancelar"
+                    doneText="Aceptar"
+                    min="2015-01-01"
+                    max="2015-12-31"
+                    >
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime placeholder="YYYY"
+                    display-format="YYYY"
+                    cancelText="Cancelar"
+                    doneText="Aceptar"
+                    min="2015"
+                    max="2025"
+                    value="2021"
+                    >
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Opciones Personalizadas</ion-label>
+      <ion-datetime [pickerOptions]="customPickerOptions"
+                    [(ngModel)]="customDate">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>
+      <ion-datetime value="2020-03-29" min="1990-02" max="2020"
+        [dayShortNames]="customDayShortNames"
+        displayFormat="DDD. MMM DD, YY"
+        monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"></ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>
