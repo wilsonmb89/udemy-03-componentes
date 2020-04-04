@@ -296,7 +296,6 @@ export class AlertPage implements OnInit {
         }
       ]
     });
-
     await alert.present();
   }
 }
