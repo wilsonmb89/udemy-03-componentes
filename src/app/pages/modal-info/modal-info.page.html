@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro Modal</ion-card-title>
+      <ion-card-subtitle>{{ nombre + ' ' + apellido }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label>Tienes {{edad}} años</ion-label>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="button" color="primary" expand="full" (click)="salirModal(false)">Salir sin argumentos</ion-button>
+  <ion-button type="button" color="secondary" expand="full" (click)="salirModal(true)">Salir con argumentos</ion-button>
+</ion-content>
