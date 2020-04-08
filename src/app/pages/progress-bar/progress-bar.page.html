@@ -1,0 +1,84 @@
+<app-header titulo="ProgressBar y Range"></app-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-title>
+        <ion-label>Range Bar</ion-label>
+      </ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-range (ionChange)="cambioRango($event)" 
+                      min="0"
+                      max="100"
+                      step="1"
+                      pin="true"
+                      color="tertiary">
+            <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+            <ion-icon slot="end" name="sunny"></ion-icon>
+          </ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-range min="-200" max="200" color="secondary">
+            <ion-label slot="start">-200</ion-label>
+            <ion-label slot="end">200</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-title>
+        <ion-label>Progress Bar</ion-label>
+      </ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Default Progressbar -->
+      <ion-item>
+        <ion-label>Default Progressbar</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar [value]="porcentaje"></ion-progress-bar>
+      </ion-item>
+
+      <!-- Default Progressbar with 50 percent -->
+      <ion-item>
+        <ion-label>Default Progressbar with 50 percent</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </ion-item>
+
+      <!-- Colorize Progressbar -->
+      <ion-item>
+        <ion-label>Colorize Progressbar</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
+      </ion-item>
+
+      <!-- Other types -->
+      <ion-item>
+        <ion-label>Other types</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
